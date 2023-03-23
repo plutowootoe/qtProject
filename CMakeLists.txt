@@ -19,6 +19,10 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        food.h
+        food.cpp
+        recipe.h
+        recipe.cpp
         ${TS_FILES}
 )
 
