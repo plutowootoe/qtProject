@@ -27,6 +27,7 @@ void getIngredients(){
 
 }
 
+// adds an ingredients to the
 void AddIngredients(vector<string> input){
    for(int i = 0;i<input.size();i++){
        ingredients.pushback(input);
@@ -34,11 +35,11 @@ void AddIngredients(vector<string> input){
 }
 
 
-
+// needs to be fixed
 void RemoveIngredient(string input){
     for(int i = 0;i<getIngredients();i++){
-        if(input==ingredients[i]){
-
+        if(input==ingredients{
+            ingredients.erase(ingredients.begin()+i)
         }
     }
    }
