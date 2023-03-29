@@ -1,11 +1,11 @@
 #include "recipe.h"
+#include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
-class recipe{
-    public:
-    virtual recipe::recipe(string &name, vector<string> &ingredients, vector<string> &tags, vector<string> &instructions, vector<string> &description)
+    Recipe::Recipe(std::string name,std::vector<std::string> ingredients,std::vector<std::string> tags,std::vector<std::string> instructions,std::string description)
     {
         this->name = name;
         this->ingredients = ingredients;
@@ -14,23 +14,20 @@ class recipe{
         this->description = description;
     }
 
-    recipe::~recipe(){
-            cout<<"Recipe Deleted"<<endl;
+    Recipe::~Recipe()
+    {
+      std::cout<<"penis";
         }
 
-recipe(name,ingredients,tags,instructions,description);
-
-
-
 // adds an ingredient to the ingredient list
-vector addIngredients(vector<string> input){
+std::vector<std::string> Recipe::addIngredients(const std::vector<std::string> input){
    for(int i = 0;i<input.size();i++){
        if(input.at(i) == ingredients.at(i))
        {
            i++;
        }
        else {
-           ingredients.pushback(input.at(i));
+           ingredients.push_back(input.at(i));
        }
    }
    return this->ingredients;
@@ -38,34 +35,40 @@ vector addIngredients(vector<string> input){
 
 
 // removes ingredient from list
-void removeIngredient(vector<string> input){
-    for(int i = 0;i<input.size();i++){
-        if(input==ingredients.at(i)){
+std::vector<std::string> Recipe::removeIngredient(const std::vector<std::string> input){
+    for(int i = 0;i<ingredients.size();i++){
+        for(int j = 0;j<input.size();j++){
+
+        if(input.at(j)==ingredients.at(i)){
             ingredients.erase(ingredients.begin()+i);
         }
         else{
             i++;
         }
+
     }
+    }
+    return ingredients;
    }
-bool Recipe::hasTag(const std::string &tag) const
+
+bool Recipe::hasTag(const std::string &tag)
 {
     // Returns true if there is a tag with this name in the recipe
-    for(size_t i = 0; i < tags.size(); ++i)
+    for(int i = 0; i < tags.size(); ++i)
     {
-        if(tags.name == tag)
+        if(tags.at(i) == tag)
         {
             return true;
         }
     }
     return false;
 }
-bool Recipe::hasIngredient(string &ingredient) const
+bool Recipe::hasIngredient(const std::string &ingredient)
 {
     // Returns true if there is an ingredient with this name in the recipe
-    for(size_t i = 0; i < ingredients.size(); ++i)
+    for(int i = 0; i < ingredients.size(); ++i)
     {
-        if(ingredients.at(i).name == ingredient)
+        if(ingredients.at(i) == ingredient)
         {
             return true;
         }
@@ -73,20 +76,18 @@ bool Recipe::hasIngredient(string &ingredient) const
     return false;
 }
 
-vector<string> getIngredients(){
+std::string Recipe::getName(){
+    return this->name;
+}
+std::vector<std::string> Recipe::getIngredients(){
     return this->ingredients;
 }
-vector<string> getTags(){
+std::vector<std::string>Recipe::getTags(){
     return this->tags;
 }
-string getDescription(){
-    return this->descriptions;
+std::string Recipe::getDescription(){
+    return this->description;
 }
-vector<string> getInstructions(){
+std::vector<std::string>Recipe::getInstructions(){
     return this->instructions;
 }
-
-
-
-
-};

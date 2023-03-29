@@ -18,14 +18,14 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>240</y>
+      <y>205</y>
       <width>146</width>
-      <height>66</height>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btn_open">
        <property name="text">
         <string>Create New Recipe</string>
        </property>
@@ -67,7 +67,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>775</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

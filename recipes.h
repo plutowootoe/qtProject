@@ -6,6 +6,7 @@ class recipeS
 {
 public:
     recipeS();
+
 };
 
 #endif // RECIPES_H
