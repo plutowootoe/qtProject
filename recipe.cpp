@@ -1,47 +1,43 @@
-#include "recipe.h
+#include "recipe.h"
 #include <vector>
 
 using namespace std;
 
-string name;
-vector<string> ingredients;
-string description = "";
-int calories = 0;
-int rating = 0;
-
 class recipe{
     public:
-    virtual recipe(){
-        string name;
-        vector<string> ingredients;
-        string description = "";
-        int calories = 0;
-        int rating = 0;
-        cout<<"Recipe Added:"<<name<<ingredients<<description<<rating<<endl;
-}
-        ~recipe(){
+    virtual recipe::recipe(string &name, vector<string> &ingredients, vector<string> &tags, vector<string> &instructions, vector<string> &description)
+    {
+        this->name = name;
+        this->ingredients = ingredients;
+        this->tags = tags;
+        this->instructions = instructions;
+        this->description = description;
+    }
+
+    recipe::~recipe(){
             cout<<"Recipe Deleted"<<endl;
         }
 
+recipe(name,ingredients,tags,instructions,description);
 
 
-recipe(ingredients,calories,description,rating);
-
-
-void getIngredients(){
-    return this->ingredients;
-
-}
 
 // adds an ingredient to the ingredient list
-void addIngredients(vector<string> input){
+vector addIngredients(vector<string> input){
    for(int i = 0;i<input.size();i++){
-       ingredients.pushback(input.at(i));
+       if(input.at(i) == ingredients.at(i))
+       {
+           i++;
+       }
+       else {
+           ingredients.pushback(input.at(i));
+       }
    }
+   return this->ingredients;
 }
 
 
-// needs to be fixed // removes ingredient from list
+// removes ingredient from list
 void removeIngredient(vector<string> input){
     for(int i = 0;i<input.size();i++){
         if(input==ingredients.at(i)){
@@ -52,16 +48,18 @@ void removeIngredient(vector<string> input){
         }
     }
    }
-void getCalories(){
-    return this->calories;
-}
 
-void getDescription(){
-    return this->description;
+vector<string> getIngredients(){
+    return this->ingredients;
 }
-
-void getRating(){
-    return this->rating;
+vector<string> getTags(){
+    return this->tags;
+}
+string getDescription(){
+    return this->descriptions;
+}
+vector<string> getInstructions(){
+    return this->instructions;
 }
 
 

@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         food.cpp
         recipe.h
         recipe.cpp
+        recipes.h
+        recipes.cpp
         ${TS_FILES}
 )
 
