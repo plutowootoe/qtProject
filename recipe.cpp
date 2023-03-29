@@ -48,6 +48,30 @@ void removeIngredient(vector<string> input){
         }
     }
    }
+bool Recipe::hasTag(const std::string &tag) const
+{
+    // Returns true if there is a tag with this name in the recipe
+    for(size_t i = 0; i < tags.size(); ++i)
+    {
+        if(tags.name == tag)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+bool Recipe::hasIngredient(string &ingredient) const
+{
+    // Returns true if there is an ingredient with this name in the recipe
+    for(size_t i = 0; i < ingredients.size(); ++i)
+    {
+        if(ingredients.at(i).name == ingredient)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 vector<string> getIngredients(){
     return this->ingredients;
