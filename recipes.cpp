@@ -43,10 +43,4 @@ class recipes
             }
             return filtered;
     }
-
-    Recipe addRecipe()
-    {
-
-    }
-
 };

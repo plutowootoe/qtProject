@@ -16,7 +16,7 @@ using namespace std;
 
     Recipe::~Recipe()
     {
-      std::cout<<"penis";
+      std::cout<<"pp";
         }
 
 // adds an ingredient to the ingredient list

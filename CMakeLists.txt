@@ -28,6 +28,9 @@ set(PROJECT_SOURCES
         recipewindow.h
         recipewindow.cpp
         recipewindow.ui
+        viewrecipes.h
+        viewrecipes.cpp
+        viewrecipes.ui
         ${TS_FILES}
 )
 
